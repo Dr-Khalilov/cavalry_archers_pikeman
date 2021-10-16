@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Result = ({userChoice, pcChoice, roundWinner, userPoint, pcPoint, countRounds, whoWon}) => (
+export const Result = ({ userChoice, pcChoice, roundWinner, userPoint, pcPoint, countRounds, whoWon }) => (
     <>
         <h1>You choice: {userChoice}</h1>
         <h1>PC choice: {pcChoice}</h1>
