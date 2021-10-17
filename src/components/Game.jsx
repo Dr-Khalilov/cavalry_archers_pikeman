@@ -17,7 +17,7 @@ export default class Game extends Component {
     }
 
     startGame = ({ target: { id: userChoice } }) => {
-        const { roundLimit, countRounds } = this.state;
+        const { roundLimit, countRounds, pcPoint, userPoint } = this.state;
         this.setState({ userChoice });
         const pcChoice = ['cavalry', 'archers', 'pikeman'][Math.floor(Math.random() * 3)];
         this.setState({ pcChoice });
@@ -42,14 +42,17 @@ export default class Game extends Component {
                 roundWinner: 'PC',
             }));
         }
-        if (countRounds === roundLimit) {
+        if (countRounds >= roundLimit && pcPoint < userPoint) {
             this.setState(() => ({
                 whoWon: 'User won!',
             }));
-        }
-        if (countRounds === roundLimit) {
+        } else if (countRounds >= roundLimit && pcPoint > userPoint) {
             this.setState(() => ({
                 whoWon: 'PC won!',
+            }));
+        } else if (countRounds >= roundLimit && pcPoint === userPoint) {
+            this.setState(() => ({
+                whoWon: 'Draw!',
             }));
         }
     };
