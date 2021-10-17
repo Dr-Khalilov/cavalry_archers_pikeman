@@ -69,8 +69,7 @@ export default class Game extends Component {
         return (
             <>
                 <Result userChoice={userChoice} pcPoint={pcPoint} roundWinner={roundWinner} pcChoice={pcChoice}
-                        userPoint={userPoint}
-                        countRounds={countRounds} whoWon={whoWon} />
+                        userPoint={userPoint} countRounds={countRounds} whoWon={whoWon} />
                 <button onClick={this.startGame} id='cavalry'>Cavalry</button>
                 &nbsp;
                 <button onClick={this.startGame} id='archers'>Archers</button>

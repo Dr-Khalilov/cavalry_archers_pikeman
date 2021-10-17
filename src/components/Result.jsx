@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Result = ({ userChoice, pcChoice, roundWinner, userPoint, pcPoint, countRounds, whoWon }) => (
     <>
@@ -11,3 +12,13 @@ export const Result = ({ userChoice, pcChoice, roundWinner, userPoint, pcPoint, 
         <h2>Who won: {whoWon}</h2>
     </>
 );
+
+Result.propTypes = {
+    userChoice: PropTypes.string.isRequired,
+    pcChoice: PropTypes.string.isRequired,
+    roundWinner: PropTypes.string.isRequired,
+    userPoint: PropTypes.number.isRequired,
+    pcPoint: PropTypes.number.isRequired,
+    countRounds: PropTypes.number.isRequired,
+    whoWon: PropTypes.string.isRequired,
+};
